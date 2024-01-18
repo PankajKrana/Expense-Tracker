@@ -9,7 +9,6 @@ This C++ program allows users to input and track expenses, storing the data in a
 - [Usage](#usage)
 - [File Format](#file-format)
 - [Sample](#sample)
-- [License](#license)
 
 ## Description
 
@@ -31,4 +30,11 @@ The Expense Tracker is a simple C++ program that enables users to input and mana
 ## File Format
 
 The CSV file (`expenses.csv`) uses the following format:
+
+
+## Sample 
+![Screenshot 2024-01-18 at 3 27 27 PM](https://github.com/PankajKrana/Projects/assets/118725047/472c8df0-783c-462b-9726-e452e226cfd4)
+
+
+
 
