@@ -64,7 +64,7 @@ int main() {
     cout << "Date: ";
     getline(cin, expenses[numExpenses].date);
 
-    if (expenses[numExpenses].date == "done") {
+    if (expenses[numExpenses].date == "done" || expenses[numExpenses].description == "done") {
       break;
     }
 
