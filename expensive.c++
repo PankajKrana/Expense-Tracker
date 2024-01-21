@@ -34,20 +34,19 @@ int readExpenses(Expense expenses[], const string &filename) {
   return count;
 }
 
-// Function to write expenses to a CSV file
-void writeExpenses(Expense expenses[], int count, const string &filename) {
-  ofstream file(filename, ios::out | ios::trunc);
+// Function to write expenses to a CSV file (append mode)
+void writeExpenses(Expense expenses[], int count, const string& filename) {
+    ofstream file(filename, ios::out | ios::app);  // Open the file in append mode
 
-  if (file.is_open()) {
-    for (int i = 0; i < count; ++i) {
-      file << expenses[i].date << ',' << expenses[i].description << ','
-           << expenses[i].amount << '\n';
+    if (file.is_open()) {
+        for (int i = 0; i < count; ++i) {
+            file << expenses[i].date << ',' << expenses[i].description << ',' << expenses[i].amount << '\n';
+        }
+
+        file.close();
+    } else {
+        cerr << "Error opening file: " << filename << endl;
     }
-
-    file.close();
-  } else {
-    cerr << "Error opening file: " << filename << endl;
-  }
 }
 
 int main() {
@@ -95,9 +94,7 @@ int main() {
   // Display the read expenses
   cout << "Read Expenses:\n";
   for (int i = 0; i < readCount; ++i) {
-    cout << "Date: " << expenses[i].date
-         << ", Description: " << expenses[i].description
-         << ", Amount: " << expenses[i].amount << "\n";
+    cout << "Date: " << expenses[i].date << ", Description: " << expenses[i].description << ", Amount: " << expenses[i].amount << "\n";
   }
 
   return 0;
